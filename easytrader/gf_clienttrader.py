@@ -7,11 +7,13 @@ import os
 import pywinauto
 import pywinauto.clipboard
 
-from easytrader import clienttrader
+from easytrader import clienttrader, grid_strategies
 from easytrader.utils.captcha import recognize_verify_code
 
 
 class GFClientTrader(clienttrader.BaseLoginClientTrader):
+    grid_strategy = grid_strategies.Xls
+    
     @property
     def broker_type(self):
         return "gf"
